@@ -1,0 +1,68 @@
+.main {
+  width: 100%;
+  padding: 20px;
+}
+
+.cardSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.cardImages {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.squirtleImg {
+  width: 150px;
+  height: 150px;
+}
+
+.squirtleImg2 {
+  padding: 30px;
+}
+
+.cardUl {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style-type: none;
+  padding: 0 20px;
+}
+
+.cardLi::marker {
+  content: '🔍';
+}
+
+.recursos {
+  padding: 0 20px;
+  color: #4592c4;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.recursos li:hover {
+  opacity: 0.8;
+}
+
+.evolutionList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  gap: 10px;
+}
+
+.evolutionLi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 1s;
+}
+
+.evolutionLi:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
