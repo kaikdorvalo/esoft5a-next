@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { Header } from "../components/header/Header";
 import { CardSection } from "../components/CardSection/CardSection";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -51,19 +52,25 @@ export default function Home() {
 
           <CardSection title="Evoluções">
             <ul className={styles.evolutionList}>
-              <li className={styles.evolutionLi}>
-                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png"></img>
-                <a href="">1. Squirtle</a>
+              <li>
+                <Link href={'/evolucoes?evolution=squirtle'} className={styles.evolutionLi}>
+                  <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png"></img>
+                  <p>1. Squirtle</p>
+                </Link>
               </li>
 
               <li className={styles.evolutionLi}>
-                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/008.png"></img>
-                <a href="">2. Wartortle</a>
+                <Link href={'/evolucoes?evolution=wartortle'}>
+                  <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/008.png"></img>
+                  <p>2. Wartortle</p>
+                </Link>
               </li>
 
               <li className={styles.evolutionLi}>
-                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png"></img>
-                <a href="">3. Blastoise</a>
+                <Link href={'/evolucoes?evolution=blastoise'}>
+                  <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png"></img>
+                  <p>3. Blastoise</p>
+                </Link>
               </li>
             </ul>
           </CardSection>
