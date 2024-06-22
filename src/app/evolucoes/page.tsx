@@ -7,20 +7,14 @@ import { useEffect, useState } from "react";
 import styles from './page.module.css';
 
 export default function Evolucao() {
-    const params = useSearchParams();
     const [pageTitle, setPageTitle] = useState('');
     const [urls, setUrls] = useState<string[]>([]);
     const [cont, setCont] = useState(0);
     const [img, setImg] = useState('');
 
-
-    const getParam = (param: string) => {
-        return params.get(param);
-    }
-
-    const callApi = async () => {
+    const callApi = async (param: string) => {
         try {
-            const fetchRes = await fetch(`https://pokeapi.co/api/v2/pokemon/${getParam('evolution')}`);
+            const fetchRes = await fetch(`https://pokeapi.co/api/v2/pokemon/${param}`);
             const data = await fetchRes.json();
             const object = Object.values(data.sprites);
             let urlArray = object.filter((el) => typeof el === 'string');
@@ -53,8 +47,9 @@ export default function Evolucao() {
     }
 
     useEffect(() => {
+        const params = useSearchParams();
         loadPageTitle();
-        callApi()
+        callApi(params.get('evolution')!)
     }, []);
 
     useEffect(() => {
